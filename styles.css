@@ -1,4 +1,28 @@
 .container{
     border: 1px solid black;
-    height: 50vh;
+    height: 10vh;
+    display: flex;
+    background-color: rgb(183, 236, 236);
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: center;
+
 }
+.cards{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    padding-left: 5px;
+    background-color: cornsilk;
+
+}
+.addButton{
+    border-radius: 10px;
+    margin-right: 20px;
+
+}
+.addButton:hover{
+    background-color: gold;
+    
+}
+
