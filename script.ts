@@ -10,60 +10,78 @@ class Product{
         this.productPrice=productPrice
         this.servings=servings
     }
-
-
-    createForm(){let productName = document.createElement("input")
-    productName.type = "text"
-    productName.required
-    // productName.placeholder = "Product"
-    productName.value=this.productName
-    productName.classList.add("productName")
+    createProduct(){
+        
+        let productHolder=document.createElement("div")
+        document.body.appendChild(productHolder)
     
-    let productLabel = document.createElement("label")
-    container.appendChild(productLabel)
-    productLabel.innerText = "Product name"
-    productLabel.appendChild(productName)
+        let name= document.createElement("p")
+        productHolder.appendChild(name)
+        name.innerHTML= "Product Name: "+productName.value
     
-    let productPrice = document.createElement("input")
-    productPrice.type = "number"
-    productPrice.required
-    // productPrice.placeholder = "Price"
-    productPrice.value=this.productPrice.toString()
-    productPrice.classList.add("productPrice")
+        let price =document.createElement("p")
+        productHolder.appendChild(price)
+        price.innerHTML="Product Price: "+productPrice.value
     
-    let priceLabel = document.createElement("label")
-    container.appendChild(priceLabel)
-    priceLabel.innerText = "Product Price"
-    priceLabel.appendChild(productPrice)
+        let servings= document.createElement("p")
+        productHolder.appendChild(servings)
+        servings.innerHTML="Product Servings: "+productServings.value
     
-    let servings = document.createElement("input")
-    servings.type = "number"
-    servings.required
-    // servings.placeholder = "Servings"
-    servings.value=this.servings.toString()
-    servings.classList.add("servings")
     
-    let servingsLabel = document.createElement("label")
-    container.appendChild(servingsLabel)
-    servingsLabel.innerText = "Servings"
-    servingsLabel.appendChild(servings)
-
     }
+    addProduct(){
+    addButton.addEventListener("click",this.createProduct)
+    }
+
 }
 
 let container = document.createElement("div")
 container.classList.add("container")
 document.body.appendChild(container)
+    
+let productName = document.createElement("input")
+productName.type = "text"
+productName.required
+// productName.placeholder = "Product"
+productName=productName
+productName.classList.add("productName")
+
+let productLabel = document.createElement("label")
+container.appendChild(productLabel)
+productLabel.innerText = "Product name"
+productLabel.appendChild(productName)
+
+let productPrice = document.createElement("input")
+productPrice.type = "number"
+productPrice.required
+// productPrice.placeholder = "Price"
+productPrice=productPrice
+productPrice.classList.add("productPrice")
+
+let priceLabel = document.createElement("label")
+container.appendChild(priceLabel)
+priceLabel.innerText = "Product Price"
+priceLabel.appendChild(productPrice)
+
+let productServings = document.createElement("input")
+productServings.type = "number"
+productServings.required
+// productServings.placeholder = "productServings"
+productServings.classList.add("servings")
+
+let servingsLabel = document.createElement("label")
+container.appendChild(servingsLabel)
+servingsLabel.innerText = "Servings"
+servingsLabel.appendChild(productServings)
 
 let products=[]
 
-products.push(new Product("Coffee",500,20))
-products.push(new Product("Tea", 100,10))
-products.push(new Product("Milk",50,5))
+let addButton = document.createElement("button")
+container.appendChild(addButton)
+addButton.innerHTML="Add Product"
+addButton.classList.add("addButton")
 
-for(let i=0; i<products.length; i++){
-    products[i].createForm()
-}
+Product.
 
 
 
